@@ -1,0 +1,4 @@
+Non-Functinal: Mobile Friendly
+Simple to Use
+Functional:
+Domain-Requirements: All Users with a Smartphone or Desktop
