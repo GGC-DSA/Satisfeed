@@ -1,27 +1,129 @@
 # Satisfeed - Data Collection & Dashboard
 
-## Project Abstract
-Team Satisfeed partnered with the nonprofit organization Satisfeed, which delivers hunger relief for Gwinnett’s families in need. With their food co-op and weekend support programs, they work to fight food insecurity and reduce food waste. Their mission is to feed people and connect communities. The team was tasked with developing a data-driven dashboard to visualize client demographics and service usage statistics. Using Google Colab for data analysis and Power BI for dashboard development, we designed an interactive tool that allows the organization to better understand the needs of its clients and make informed decisions about program planning and resource allocation. This project highlights the potential of data science to empower nonprofit organizations in their mission to create meaningful social impact while being able to visualize said impact. 
+## Description  
+In Spring 2025, Team Satisfeed partnered with the nonprofit Satisfeed, which provides hunger relief for families in and around Gwinnett County through food co-ops and weekend programs. Their mission is to fight food insecurity, reduce waste, and connect communities. The team created a data-driven dashboard using Google Colab and Power BI to visualize client demographics and service usage, giving the organization insights for program planning and resource allocation.
+
+### Updates Fall 2025
+This semester’s work expands the original dashboard by integrating a new dashboard section with an interactive map. The goal is to help Satisfeed identify trends in food insecurity around Georgia's schools / libraries in relation to food distribution geographical data to improve distribution planning.
 
 ## Project Documentation:
-Project Demo [(https://app.powerbi.com/view?r=eyJrIjoiMGViYzE1YzktZmEzNi00OTJhLThhNWQtZDRkMjczOTZlNzAxIiwidCI6ImNmOTU1MmRiLTY2MGEtNGE5MS05YmQ2LTY1YzIzMDBmOWNiMSIsImMiOjF9)]
+[Project Demo](https://app.powerbi.com/view?r=eyJrIjoiMGViYzE1YzktZmEzNi00OTJhLThhNWQtZDRkMjczOTZlNzAxIiwidCI6ImNmOTU1MmRiLTY2MGEtNGE5MS05YmQ2LTY1YzIzMDBmOWNiMSIsImMiOjF9)\
+[Project Website](https://satisfeeddashboardproject.carrd.co)\
+Project Poster (in the Docs folder)\
+[Final Report](https://github.com/user-attachments/files/20028096/Final_Report-_Team_Satisfeed.docx)
 
-Project Website [https://satisfeeddashboardproject.carrd.co] 
+### Updates Fall 2025
+[Project Demo Vlog](https://youtu.be/BCJqnT96kgE)\
+[Project Poster](https://github.com/GGC-SD/SatisfeedSchools/blob/main/docs-Fall2025/Satisfeed-flyer.pdf)\
+[Final Report](https://github.com/GGC-SD/SatisfeedSchools/blob/main/docs-Fall2025/Satisfeed%20Dashboard%20Final%20Report.pdf)
 
-Project Poster [STARS/CREATE Poster in the Docs folder] 
+## Technologies
+- Next.js
+- Firebase
+- Python
 
-Final Report [([Final_Report-_Team_Satisfeed.docx](https://github.com/user-attachments/files/20028096/Final_Report-_Team_Satisfeed.docx)
-)]
+### Updates Fall 2025
+- MapLibre GL JS - https://maplibre.org/maplibre-gl-js/docs/  
+
+## Working Features
+- Dashboard Login
+- Select Dashboard Data Version
+- Data visualization by:
+   - Race
+   - Income
+   - Education
+   - Employment Status
+   - Food Distribution by County
+   - Food Distribution by ZIP Code
+   - Total Families Reached
+   - Total People Helped
+- Upload Raw Data
+- Manage Data Versions
+
+### Working Features Developed Fall 2025
+- Dashboard Insights Tab  
+New section of the Satisfeed dashboard focused on interactive layered maps enabling Satisfeed to view food distribution around GA, statistical information, and locations of schools / libraries.
+
+- School Data Integration  
+Interactive map overlay showing Georgia schools, allowing Satisfeed to view distribution geographically in relation to schools.
+Involved integrating scripts to parse school data from public APIs and saving data to firebase. This allowed users to access said data when interacting with the maps in Dashboard Insights' Schools tab.
+
+- Food Distribution Data Integration  
+Dashboard now highlights total families served allowing deeper insight into which communities need the most assistance. 
+Involved integrating a backend endpoint to safely parse CSV file of dirstibution data, and save (approximate) address coordinates with LocationIQ api as a persistant file. This allowed users to safely view distribution data on the map.
+
+- Library Data Integration  
+Interactive map overlay showing Georgia Libraries, allowing Satisfeed to view distribution geographically in relation to libraries.
+Involved integrating scripts to parse library data from public APIs and saving data to firebase. This allowed users to access said data when interacting with the maps in Dashboard Insights' Libraries tab.
+
+- County / ZIP Statistics  
+Dashboard integrates relevant statisitcs per county / ZIP code selected while also showcasing location on maps.
+Involved working with exisiting GEOJson data which allows users to select needed County / ZIP to be presented with relevant information.
+
+---
+
+## Installation Steps
+1. Clone the repo: git clone https://github.com/nhuthanhtran/Satisfeed
+2. Install dependencies: install npm with "npm install"
+3. Add environment variables to .env.local file in root directory
+### Updates Fall 2025 
+4. Ensure MapLibre is installed
+```
+npm install maplibre-gl
+```
+5. Apply updated environment variables
+```
+NEXT_PUBLIC_MAPTILER_KEY=
+LOCATIONIQ_KEY=
+```
+
+7. Verify Firebase credentials include rules for new data models.
+
+## Running Steps
+1. Run the development server:
+   
+```
+npm run dev  
+# or  
+yarn dev  
+# or  
+pnpm dev  
+# or  
+bun dev  
+```  
+    
+2. Open http://localhost:3000 with your browser to see the result.
+3. Sign up for an account and verify with your email to get approved as an admin.
+4. You can start editing the page by modifying app/page.tsx. The page auto-updates as you edit the file.
 
 ## Spring 2025 Team
 Caleb Cedeno - Project Manager & Visualizations 
 Elizabeth Doss - Data analyzer & Client Liason 
 Damaris Montecinos - Data modeler, Project Documenter
 
-## Outreach Activities
+## Fall 2025 Team
+Sam Keller - Code Architecture / Lead programmer, UI/UX designer, Client liaison <br>
+Dylan Long - Testing lead / Team manager 🦉  
+Ewura Ama Awere - Data Modeler, Documentation Lead 
 
+## Fall 2026 Team - Frenzy Farmers
+Clark Newell - Project Manager, Testing Lead
+<br>
+Carlos Matos - UI/UX designer, Documentation Lead
+<br>
+Hugo Padilla - Lead Programmer, Client Liaison 
+<br>
+<br>
+<img width="480" height="360" alt="Satisfeed" src="https://github.com/user-attachments/assets/883e7014-a84b-45a9-8f1f-369d0b5b6eec" />
+
+
+
+## Outreach Activities
 1. Poster was presented at Georgia Gwinnett College's Student Talent and Research Showcase (STARS) 4/17/2025
 2. Dashboard demo was given at Georgia Gwinnett College's CREATE Symposium 4/24/2025
+3. Expanded Dashboard demo was given at Georgia Gwinnett College's CREATE Symposium 11/21/2025
+
+---
 
 ## Technologies and Usage
 
@@ -30,8 +132,7 @@ layout was created in Power BI for later implementation in Javascript by Thanh T
 dashboard can be viewed by Satisfeed employees.
 
 ## Spring 2025 Project Progress
-
-Disclaimer: The notebook,dataset, and PBIX file cannot be displayed, as they contain personal information of Satisfeed customers including full names, addresses, and phone numbers. Therefore, all displayed metrics and stats are a high-level overview of the analysis without specific data points displayed.
+Disclaimer: The notebook, dataset, and PBIX file cannot be displayed, as they contain personal information of Satisfeed customers including full names, addresses, and phone numbers. Therefore, all displayed metrics and stats are a high-level overview of the analysis without specific data points displayed.
 
 ### Analysis Methods
 PCA and linear regression were attempted on the data set, but failed due to a lack of numerical data and numerous gaps in client reporting. As a result, most of the 
@@ -56,5 +157,9 @@ It would be optimal to pull data to the dashboard straight from Satisfeeds datab
 client would also like the "lbs of food served" card to be real time where they can live update the data. As of now the card pulls static data from a hypothetical table 
 and is used as a placeholder.
 
+---
 
+## License
+This project is licensed under the [MIT License](LICENSE).  
+© 2025 Georgia Gwinnett College
 
